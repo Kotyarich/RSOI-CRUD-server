@@ -7,6 +7,7 @@ import (
 	userPostgres "../user/repository/postgres"
 	userUceCase "../user/usecase"
 	"context"
+	"github.com/Kotyarich/tp-db-forum/db"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -22,7 +23,7 @@ type App struct {
 }
 
 func NewApp() *App {
-	userRepo := userPostgres.NewUserRepository()
+	userRepo := userPostgres.NewUserRepository(db.GetDB())
 
 	return &App{
 		userUC: userUceCase.NewUserUseCase(userRepo),

@@ -1,7 +1,6 @@
 package postgres
 
 import (
-	"../../../db"
 	"../../../models"
 	userPkg "../../../user"
 	"context"
@@ -9,7 +8,7 @@ import (
 )
 
 type User struct {
-	gorm.Model
+	ID      uint
 	Name    string
 	Address string
 	Work    string
@@ -20,8 +19,8 @@ type UserRepository struct {
 	db *gorm.DB
 }
 
-func NewUserRepository() *UserRepository {
-	rep := &UserRepository{db.GetDB()}
+func NewUserRepository(db *gorm.DB) *UserRepository {
+	rep := &UserRepository{db}
 	err := rep.db.AutoMigrate(&User{})
 	if err != nil {
 		panic(err)
@@ -44,7 +43,7 @@ func (r UserRepository) GetUser(ctx context.Context, id int) (*models.User, erro
 	var user User
 	res := r.db.First(&user, id)
 	if res.Error != nil {
-		return nil, userPkg.ErrUserNotFound
+		return nil, res.Error //userPkg.ErrUserNotFound
 	}
 
 	return ToModel(&user), nil
@@ -56,7 +55,7 @@ func (r UserRepository) ChangeUser(ctx context.Context, user *models.User, id in
 
 	res := r.db.Save(model)
 	if res.Error != nil {
-		return nil, userPkg.ErrUserAlreadyExists
+		return nil, res.Error //userPkg.ErrUserAlreadyExists
 	}
 
 	number := res.RowsAffected
