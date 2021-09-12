@@ -35,9 +35,9 @@ jobs:
           usedocker: true
 
       - name: Wait deploing
-          uses: jakejarvis/wait-action@master
-          with:
-            time: '2s'
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '2s'
 
       - name: Run API Tests
         id: run-newman
