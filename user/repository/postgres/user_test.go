@@ -1,8 +1,6 @@
 package postgres
 
 import (
-	"../../../models"
-	"../../../user"
 	"context"
 	"database/sql"
 	"github.com/DATA-DOG/go-sqlmock"
@@ -12,6 +10,8 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"regexp"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/models"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/user"
 	"testing"
 )
 
