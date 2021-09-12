@@ -30,7 +30,6 @@ jobs:
       - name: Deploy
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          fetch-depth: 0
           heroku_api_key: "92afc1e3-41cd-4e8f-ba23-343b5947c4e9"
           heroku_app_name: "rsoi-lab1-kotov"
           heroku_email: "ndkotov@gmail.com"
