@@ -9,5 +9,6 @@ COPY . .
 RUN mkdir executable
 RUN go get -d ./... && go build -o executable ./...
 
-EXPOSE 8080
+ENV PORT=8080
+#EXPOSE ${PORT}
 ENTRYPOINT ["./executable/api"]
