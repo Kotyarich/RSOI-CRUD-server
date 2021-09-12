@@ -35,6 +35,11 @@ jobs:
           heroku_email: "ndkotov@gmail.com"
           usedocker: true
 
+      - name: Wait deploing
+          uses: jakejarvis/wait-action@master
+          with:
+            time: '2s'
+
       - name: Run API Tests
         id: run-newman
         uses: anthonyvscode/newman-action@v1
