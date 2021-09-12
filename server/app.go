@@ -1,18 +1,18 @@
 package server
 
 import (
-	"../common"
-	"../user"
-	userHttp "../user/delivery/http"
-	userPostgres "../user/repository/postgres"
-	userUceCase "../user/usecase"
 	"context"
-	"github.com/Kotyarich/tp-db-forum/db"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/common"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/db"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/user"
+	userHttp "rsoi-2021-lab1-ci-cd-Kotyarich/user/delivery/http"
+	userPostgres "rsoi-2021-lab1-ci-cd-Kotyarich/user/repository/postgres"
+	userUceCase "rsoi-2021-lab1-ci-cd-Kotyarich/user/usecase"
 	"time"
 )
 

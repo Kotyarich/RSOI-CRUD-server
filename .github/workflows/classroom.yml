@@ -6,6 +6,7 @@ on:
   pull_request:
     branches:
       - master
+      - test-actions
 jobs:
   build:
     name: Autograding
@@ -15,7 +16,25 @@ jobs:
         with:
           fetch-depth: 0
 
-      # TODO build, test and deploy project
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          - go-version: 1.14.x
+
+      - name: Build
+        run: go get -d ./... && go build ./...
+
+      - name: Test
+        run: go test ./...
+
+      - name: Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          fetch-depth: 0
+          heroku_api_key: "92afc1e3-41cd-4e8f-ba23-343b5947c4e9"
+          heroku_app_name: "rsoi-lab1-kotov"
+          heroku_email: "ndkotov@gmail.com"
+          usedocker: true
 
       - name: Run API Tests
         id: run-newman

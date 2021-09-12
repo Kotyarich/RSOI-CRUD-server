@@ -1,9 +1,9 @@
 package http
 
 import (
-	"../../../user"
 	"github.com/gorilla/mux"
 	"net/http"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/user"
 )
 
 type Users struct {

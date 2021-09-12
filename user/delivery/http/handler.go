@@ -1,14 +1,14 @@
 package http
 
 import (
-	"../../../models"
-	"../../../user"
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
 	"io"
 	"io/ioutil"
 	"net/http"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/models"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/user"
 	"strconv"
 )
 

@@ -1,18 +1,18 @@
 package usecase
 
 import (
-	"../../models"
-	userPkg "../../user"
 	"context"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/models"
+	userPkg "rsoi-2021-lab1-ci-cd-Kotyarich/user"
 )
 
 type UserUseCase struct {
-	userRepo       userPkg.Repository
+	userRepo userPkg.Repository
 }
 
 func NewUserUseCase(userRepo userPkg.Repository) *UserUseCase {
 	return &UserUseCase{
-		userRepo:       userRepo,
+		userRepo: userRepo,
 	}
 }
 
@@ -41,7 +41,7 @@ func (u *UserUseCase) ChangeProfile(ctx context.Context, user *models.User, id i
 	}
 
 	// do nothing if we dont need to change anything
-	if user.Address == "" && user.Work == "" && user.Name == "" && user.Age == 0{
+	if user.Address == "" && user.Work == "" && user.Name == "" && user.Age == 0 {
 		return oldUser, nil
 	}
 	// check empty fields

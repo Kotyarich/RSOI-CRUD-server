@@ -1,10 +1,10 @@
 package postgres
 
 import (
-	"../../../models"
-	userPkg "../../../user"
 	"context"
 	"gorm.io/gorm"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/models"
+	userPkg "rsoi-2021-lab1-ci-cd-Kotyarich/user"
 )
 
 type User struct {

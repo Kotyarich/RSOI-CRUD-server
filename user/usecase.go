@@ -1,8 +1,8 @@
 package user
 
 import (
-	"../models"
 	"context"
+	"rsoi-2021-lab1-ci-cd-Kotyarich/models"
 )
 
 type UseCase interface {

@@ -8,7 +8,10 @@ import (
 var db *gorm.DB
 
 func init() {
-	dsn := "host=localhost user=kotyarich password=1234 dbname=test port=5432 sslmode=disable TimeZone=Europe/Moscow"
+	dsn := "host=ec2-54-74-14-109.eu-west-1.compute.amazonaws.com " +
+		"user=pmfbtvnvqzyukr " +
+		"password=e629f697b700dcaf54c9f1bf4c6ffe1318f2b8f5771461e46764238a160cf8c1 " +
+		"dbname=dd73bum723rkng port=5432 sslmode=disable TimeZone=Europe/Moscow"
 	var err error
 	db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
