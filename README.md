@@ -1,9 +1,5 @@
 # Лабораторная работа #1
 
-![GitHub Classroom Workflow](../../workflows/GitHub%20Classroom%20Workflow/badge.svg?branch=master)
-
-![Points badge](../../blob/badges/.github/badges/points.svg)
-
 ## Continuous Integration & Continuous Delivery
 
 ### Формулировка
